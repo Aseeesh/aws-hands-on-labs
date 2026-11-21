@@ -1,0 +1,6 @@
+== 1. Private bucket (Block Public Access stays ON) + site files
+== 2. Origin Access Control (CloudFront signs its requests to S3)
+== 3. CloudFront distribution (HTTPS only for viewers, cheapest price class)
+== 4. Bucket policy: ONLY this CloudFront distribution may read objects
+== 5. Wait for the distribution to deploy (about 3-6 minutes)
+URL: https://d23hiuudbdw9h9.cloudfront.net

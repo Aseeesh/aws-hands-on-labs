@@ -1,0 +1,27 @@
+$ curl -s -o /dev/null -w '%{http_code}' https://<cloudfront-domain>/
+200
+$ curl -s https://<cloudfront-domain>/ | grep '<h1>'
+<h1>Hello from CloudFront &#128640;</h1>
+$ curl -sI http://<cloudfront-domain>/ | head -3   (HTTP is redirected to HTTPS)
+HTTP/1.1 301 Moved Permanently
+Location: https://<cloudfront-domain>/
+$ curl -s -o /dev/null -w '%{http_code}' https://<cloudfront-domain>/nope   (custom 404)
+404
+<h1>404 - Page not found</h1>
+$ curl -sI https://<cloudfront-domain>/ | grep -i x-cache
+x-cache: Hit from cloudfront
+$ curl -s -o /dev/null -w '%{http_code}' https://<bucket>.s3.ap-southeast-2.amazonaws.com/index.html   (bucket is private: direct access denied)
+403
+$ aws s3api get-public-access-block --bucket <bucket>
+{
+    "BlockPublicAcls": true,
+    "IgnorePublicAcls": true,
+    "BlockPublicPolicy": true,
+    "RestrictPublicBuckets": true
+}
+$ aws cloudfront get-distribution --id <id> --query 'Distribution.{Status:Status,Enabled:DistributionConfig.Enabled,Price:DistributionConfig.PriceClass}'
+{
+    "Status": "Deployed",
+    "Enabled": true,
+    "Price": "PriceClass_100"
+}
