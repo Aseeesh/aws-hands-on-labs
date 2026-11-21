@@ -16,16 +16,16 @@ lab-09-lambda-role
 +--------+--------------+
 |  None  |  200         |
 +--------+--------------+
-{"message": "Hello, AWS Portfolio! Greetings from AWS Lambda.", "request_id": "90bc4b48-fdae-4296-9140-da069e5302ed"}
-== 4. Read the logs from CloudWatch
+{"message": "Hello, AWS Portfolio! Greetings from AWS Lambda.", "request_id": "4a40a929-ff59-43f5-ad31-73447e7eba71"}
+== 4. Read the logs from CloudWatch (this invocation only)
 INIT_START Runtime Version: python:3.13.mainlinev2.v86
-Runtime Version ARN: arn:aws:lambda:ap-southeast-2::runtime:94107394b7943d336b78c01af71e42f453f8186ba74ab877f115e1908ea07783
-START RequestId: 90bc4b48-fdae-4296-9140-da069e5302ed Version: $LATEST
+Runtime Version ARN: <redacted>
+START RequestId: 4a40a929-ff59-43f5-ad31-73447e7eba71 Version: $LATEST
 Greeting requested for: AWS Portfolio
-END RequestId: 90bc4b48-fdae-4296-9140-da069e5302ed
-REPORT RequestId: 90bc4b48-fdae-4296-9140-da069e5302ed
-Duration: 1.70 ms
-Billed Duration: 81 ms
+END RequestId: 4a40a929-ff59-43f5-ad31-73447e7eba71
+REPORT RequestId: 4a40a929-ff59-43f5-ad31-73447e7eba71
+Duration: 1.86 ms
+Billed Duration: 85 ms
 Memory Size: 128 MB
 Max Memory Used: 31 MB
-Init Duration: 78.68 ms
+Init Duration: 82.66 ms

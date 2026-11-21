@@ -1,0 +1,14 @@
+$ aws lambda get-function --function-name lab-09-hello --query 'Configuration.[FunctionName,Runtime,State,MemorySize]'
+[
+    "lab-09-hello",
+    "python3.13",
+    "Active",
+    128
+]
+$ aws iam list-attached-role-policies --role-name lab-09-lambda-role
+[
+    "AWSLambdaBasicExecutionRole"
+]
+$ aws lambda invoke --function-name lab-09-hello --payload '{"name":"Verifier"}' out.json
+200
+{"message": "Hello, Verifier! Greetings from AWS Lambda.", "request_id": "<id>"}
