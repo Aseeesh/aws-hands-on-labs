@@ -1,0 +1,26 @@
+$ aws apigateway get-rest-apis --query "items[?name=='lab-10-hello-api'].name"
+[
+    "lab-10-hello-api"
+]
+$ aws lambda get-function --function-name lab-10-api-handler --query Configuration.State
+"Active"
+$ aws apigateway get-resources --rest-api-id <id> --query 'items[].path'
+[
+    "/hello",
+    "/quote",
+    "/"
+]
+$ aws apigateway get-stage --rest-api-id <id> --stage-name prod  (throttling)
+{
+    "stage": "prod",
+    "rateLimit": 10.0,
+    "burstLimit": 20
+}
+$ curl -s -w ' [HTTP %{http_code}]' <invoke-url>/hello?name=Verifier
+{"message": "Hello, Verifier!"}  [HTTP 200]
+$ curl -s -w ' [HTTP %{http_code}]' <invoke-url>/hello
+{"message": "Hello, World!"}  [HTTP 200]
+$ curl -s -w ' [HTTP %{http_code}]' <invoke-url>/quote
+{"quote": "Build, measure, learn."}  [HTTP 200]
+$ curl -s -w ' [HTTP %{http_code}]' <invoke-url>/missing
+{"message":"Missing Authentication Token"}  [HTTP 403]

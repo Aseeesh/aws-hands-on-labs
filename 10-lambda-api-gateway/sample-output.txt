@@ -3,9 +3,16 @@ lab-10-lambda-role
 == 2. REST API with /hello and /quote (GET) using Lambda proxy integration
 == 3. Allow API Gateway to invoke the function
 == 4. Deploy to stage 'prod'
-Invoke URL: https://09quw127h7.execute-api.ap-southeast-2.amazonaws.com/prod
+Invoke URL: https://rdsu03czfa.execute-api.ap-southeast-2.amazonaws.com/prod
 == 5. Test
 {"message": "Hello, Portfolio!"}  [HTTP 200]
 {"message": "Hello, World!"}  [HTTP 200]
 {"quote": "Build, measure, learn."}  [HTTP 200]
 {"message":"Missing Authentication Token"}  [HTTP 403]
+
+== 4b. Throttle the stage (added after the first deploy run above, applied to the same live API)
+{
+    "stage": "prod",
+    "rate": 10.0,
+    "burst": 20
+}
