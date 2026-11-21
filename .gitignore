@@ -8,3 +8,7 @@
 cdk.out/
 node_modules/
 __pycache__/
+
+# AWS credential exports - never commit
+*accessKeys*.csv
+*credentials*.csv
