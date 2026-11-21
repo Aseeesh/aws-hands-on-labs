@@ -29,7 +29,7 @@ Start from [`_template/`](_template/README.md) to add a lab.
 | 03 | Foundations | AWS CLI setup | CLI, STS | Beginner | Planned |
 | 04 | Storage | [S3 static website](04-s3-static-website/README.md) | S3 | Beginner | Done |
 | 05 | Storage | [S3 versioning and lifecycle rules](05-s3-versioning-lifecycle/README.md) | S3 | Beginner | Done |
-| 06 | Storage | CloudFront in front of S3 | CloudFront, S3 | Beginner | Planned |
+| 06 | Storage | [CloudFront in front of S3](06-cloudfront-s3/README.md) | CloudFront, S3 | Beginner | Done |
 | 07 | Compute | [EC2 web server](07-ec2-web-server/README.md) | EC2 | Beginner | Done |
 | 08 | Compute | ALB + Auto Scaling | ELB, ASG | Intermediate | Planned |
 | 09 | Compute | [Lambda function](09-lambda-function/README.md) | Lambda, IAM | Beginner | Done |
