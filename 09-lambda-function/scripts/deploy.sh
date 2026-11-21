@@ -22,10 +22,11 @@ aws lambda create-function --function-name $FN --runtime python3.13 --handler la
 aws lambda wait function-active-v2 --function-name $FN
 
 echo "== 3. Invoke it"
+START_MS=$(( $(date +%s) * 1000 ))   # only show logs from THIS invocation
 aws lambda invoke --function-name $FN --payload '{"name":"AWS Portfolio"}' --cli-binary-format raw-in-base64-out /tmp/lab09-out.json \
   --query '{StatusCode:StatusCode,Error:FunctionError}' --output table
 cat /tmp/lab09-out.json; echo
 
 echo "== 4. Read the logs from CloudWatch"
 sleep 8
-aws logs filter-log-events --log-group-name /aws/lambda/$FN --query 'events[].message' --output text | tr '\t' '\n' | grep -vE '^$'
+aws logs filter-log-events --log-group-name /aws/lambda/$FN --start-time "$START_MS" --query 'events[].message' --output text | tr '\t' '\n' | grep -vE '^$'
