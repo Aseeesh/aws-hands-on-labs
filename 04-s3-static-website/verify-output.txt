@@ -1,0 +1,8 @@
+$ curl -s -o /dev/null -w '%{http_code}' http://lab-04-static-site-c1f231.s3-website-ap-southeast-2.amazonaws.com/
+200
+$ curl -s http://lab-04-static-site-c1f231.s3-website-ap-southeast-2.amazonaws.com/ | grep '<h1>'
+<h1>Hello from Amazon S3 👋</h1>
+$ curl -s -o /dev/null -w '%{http_code}' http://lab-04-static-site-c1f231.s3-website-ap-southeast-2.amazonaws.com/nope
+404
+$ curl -s http://lab-04-static-site-c1f231.s3-website-ap-southeast-2.amazonaws.com/nope | grep '<h1>'
+<h1>404 - Page not found</h1>
