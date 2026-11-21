@@ -1,0 +1,23 @@
+$ aws ec2 describe-instances --instance-ids <id> --query 'Reservations[0].Instances[0].[State.Name,InstanceType,MetadataOptions.HttpTokens]'
+[
+    "running",
+    "t3.micro",
+    "required"
+]
+$ aws ec2 describe-security-groups --group-ids <sg> --query 'SecurityGroups[0].IpPermissions[].[IpProtocol,FromPort,ToPort,IpRanges[0].CidrIp]'
+[
+    [
+        "tcp",
+        80,
+        80,
+        "0.0.0.0/0"
+    ]
+]
+$ curl -s -o /dev/null -w '%{http_code}' http://<public-ip>/
+200
+$ curl -s http://<public-ip>/ | sed 's/<[^>]*>//g' | grep -E 'Instance|Zone'
+i-06c25971f9973654b
+ap-southeast-2b
+t3.micro
+$ nc -zv -w 3 <public-ip> 22   (SSH should be closed)
+nc: connectx to 16.178.132.21 port 22 (tcp) failed: Operation timed out

@@ -1,0 +1,9 @@
+== 1. Find the default VPC and the latest Amazon Linux 2023 AMI
+vpc=vpc-009af697e07cc67f3 ami=ami-09a2f74ce8538e414
+== 2. Security group: allow HTTP (80) in. No SSH port is opened
+== 3. Launch t3.micro with user data (IMDSv2 required)
+instance=i-06c25971f9973654b  public-ip=16.178.132.21
+== 4. Wait for nginx to answer
+HTTP 200 from http://16.178.132.21/
+Hello from Amazon EC2 &#128075;
+Instance ID: i-06c25971f9973654bAvailability Zone: ap-southeast-2bInstance type: t3.micro
