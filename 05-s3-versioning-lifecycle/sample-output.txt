@@ -1,0 +1,38 @@
+== 1. Create bucket lab-05-versioning-728a49 (private by default)
+== 2. Turn on versioning
+{
+    "Status": "Enabled"
+}
+== 3. Upload the same key 3 times -> 3 versions
+W6Zv4gdDs5O2kn9UyG5wRzN.xHu7PaG5
+FgThDHTkndMO7T6tx83VmycfKppAawOW
+HKdTuUYaJ1C4jwZCJQzHI6x7UMzTmZMg
+----------------------------------------------------------------
+|                      ListObjectVersions                      |
++----------+-------------+-------------------------------------+
+| IsLatest |     Key     |              VersionId              |
++----------+-------------+-------------------------------------+
+|  True    |  report.txt |  HKdTuUYaJ1C4jwZCJQzHI6x7UMzTmZMg   |
+|  False   |  report.txt |  FgThDHTkndMO7T6tx83VmycfKppAawOW   |
+|  False   |  report.txt |  W6Zv4gdDs5O2kn9UyG5wRzN.xHu7PaG5   |
++----------+-------------+-------------------------------------+
+== 4. Normal delete adds a delete marker (data is NOT lost)
+{
+    "DeleteMarker": true,
+    "VersionId": "q3N.9DS77mc1PskcTiicc_mcNhLuC39T"
+}
+aws: [ERROR]: An error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+== 5. Recover: delete the delete marker
+restored content: report version 3
+== 6. Add lifecycle rule
+{
+    "TransitionDefaultMinimumObjectSize": "all_storage_classes_128K"
+}
+------------------------------------------------------------
+|              GetBucketLifecycleConfiguration             |
++-------------------------+--------------------------------+
+|  ExpireOldVersionsAfter |  30                            |
+|  IA_after_days          |  30                            |
+|  ID                     |  tier-and-expire-old-versions  |
+|  Status                 |  Enabled                       |
++-------------------------+--------------------------------+

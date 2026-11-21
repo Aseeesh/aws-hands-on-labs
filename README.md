@@ -28,7 +28,7 @@ Start from [`_template/`](_template/README.md) to add a lab.
 | 02 | Foundations | IAM users, groups, roles, least-privilege | IAM | Beginner | Planned |
 | 03 | Foundations | AWS CLI setup | CLI, STS | Beginner | Planned |
 | 04 | Storage | [S3 static website](04-s3-static-website/README.md) | S3 | Beginner | Done |
-| 05 | Storage | S3 versioning and lifecycle rules | S3 | Beginner | Planned |
+| 05 | Storage | [S3 versioning and lifecycle rules](05-s3-versioning-lifecycle/README.md) | S3 | Beginner | Done |
 | 06 | Storage | CloudFront in front of S3 | CloudFront, S3 | Beginner | Planned |
 | 07 | Compute | EC2 web server | EC2 | Beginner | Planned |
 | 08 | Compute | ALB + Auto Scaling | ELB, ASG | Intermediate | Planned |
