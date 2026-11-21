@@ -1,0 +1,6 @@
+== 1. VPC 10.20.0.0/16 (65,536 addresses)
+== 2. Four subnets (2 public, 2 private) across two Availability Zones
+== 3. Internet gateway attached to the VPC
+== 4. Public route table: 0.0.0.0/0 -> internet gateway
+== 5. Private route table: local traffic only (no route to the internet)
+== Done: vpc=vpc-0d0e3629b2b05cbf6

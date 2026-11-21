@@ -1,0 +1,36 @@
+$ aws ec2 describe-vpcs --vpc-ids <vpc> --query 'Vpcs[0].[CidrBlock,State]'
+[
+    "10.20.0.0/16",
+    "available"
+]
+$ aws ec2 describe-subnets --filters Name=vpc-id,Values=<vpc> --query 'Subnets[].[Tags[?Key==`Name`]|[0].Value,CidrBlock,AvailabilityZone,MapPublicIpOnLaunch]'
+-------------------------------------------------------------------
+|                         DescribeSubnets                         |
++------------------+-----------------+-------------------+--------+
+|  lab-12-public-a |  10.20.1.0/24   |  ap-southeast-2a  |  True  |
+|  lab-12-private-a|  10.20.11.0/24  |  ap-southeast-2a  |  False |
+|  lab-12-private-b|  10.20.12.0/24  |  ap-southeast-2b  |  False |
+|  lab-12-public-b |  10.20.2.0/24   |  ap-southeast-2b  |  True  |
++------------------+-----------------+-------------------+--------+
+$ aws ec2 describe-route-tables  (public route table routes)
+[
+    [
+        "10.20.0.0/16",
+        "local"
+    ],
+    [
+        "0.0.0.0/0",
+        "igw-03fe9a6e7374e9374"
+    ]
+]
+$ aws ec2 describe-route-tables  (private route table routes)
+[
+    [
+        "10.20.0.0/16",
+        "local"
+    ]
+]
+$ aws ec2 describe-internet-gateways  (attached?)
+"available"
+$ aws ec2 describe-nat-gateways --filter Name=vpc-id,Values=<vpc>   (none: no NAT cost)
+[]
