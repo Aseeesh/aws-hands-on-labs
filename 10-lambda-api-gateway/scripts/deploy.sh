@@ -35,6 +35,10 @@ aws lambda add-permission --function-name $FN --statement-id apigw-invoke --acti
 
 echo "== 4. Deploy to stage 'prod'"
 aws apigateway create-deployment --rest-api-id $API_ID --stage-name prod --query id --output text >/dev/null
+echo "== 4b. Throttle the stage (public, no auth): 10 req/s steady, burst 20"
+aws apigateway update-stage --rest-api-id $API_ID --stage-name prod --patch-operations \
+  'op=replace,path=/*/*/throttling/rateLimit,value=10' 'op=replace,path=/*/*/throttling/burstLimit,value=20' \
+  --query '{stage:stageName,throttling:methodSettings."*/*".throttlingRateLimit}' --output json
 echo "$API_ID" > "$HERE/.state"
 URL="https://${API_ID}.execute-api.${REGION}.amazonaws.com/prod"
 echo "Invoke URL: $URL"
