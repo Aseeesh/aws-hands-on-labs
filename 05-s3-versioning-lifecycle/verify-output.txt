@@ -1,0 +1,28 @@
+$ aws s3api get-bucket-versioning --bucket lab-05-versioning-df48f0
+{
+    "Status": "Enabled"
+}
+$ aws s3api list-object-versions --bucket lab-05-versioning-df48f0 --query 'Versions[].[Key,IsLatest]'
+[
+    {
+        "Key": "report.txt",
+        "IsLatest": true
+    },
+    {
+        "Key": "report.txt",
+        "IsLatest": false
+    },
+    {
+        "Key": "report.txt",
+        "IsLatest": false
+    }
+]
+$ aws s3api get-object --bucket lab-05-versioning-df48f0 --key report.txt - (latest content)
+report version 3
+$ aws s3api get-bucket-lifecycle-configuration --bucket lab-05-versioning-df48f0
+[
+    {
+        "ID": "tier-and-expire-old-versions",
+        "Status": "Enabled"
+    }
+]

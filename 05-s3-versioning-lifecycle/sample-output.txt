@@ -1,25 +1,25 @@
-== 1. Create bucket lab-05-versioning-728a49 (private by default)
+== 1. Create bucket lab-05-versioning-df48f0 (private by default)
 == 2. Turn on versioning
 {
     "Status": "Enabled"
 }
 == 3. Upload the same key 3 times -> 3 versions
-W6Zv4gdDs5O2kn9UyG5wRzN.xHu7PaG5
-FgThDHTkndMO7T6tx83VmycfKppAawOW
-HKdTuUYaJ1C4jwZCJQzHI6x7UMzTmZMg
+pBEjHJnwiKvAYi3zeX6KNGfhUv38A1JG
+pmF5Hy3JU_pbBcm39NKUUsarmNwzpHLC
+jUQGlxdMyOAz6xTAGOaMLH28EDWSMAgT
 ----------------------------------------------------------------
 |                      ListObjectVersions                      |
 +----------+-------------+-------------------------------------+
 | IsLatest |     Key     |              VersionId              |
 +----------+-------------+-------------------------------------+
-|  True    |  report.txt |  HKdTuUYaJ1C4jwZCJQzHI6x7UMzTmZMg   |
-|  False   |  report.txt |  FgThDHTkndMO7T6tx83VmycfKppAawOW   |
-|  False   |  report.txt |  W6Zv4gdDs5O2kn9UyG5wRzN.xHu7PaG5   |
+|  True    |  report.txt |  jUQGlxdMyOAz6xTAGOaMLH28EDWSMAgT   |
+|  False   |  report.txt |  pmF5Hy3JU_pbBcm39NKUUsarmNwzpHLC   |
+|  False   |  report.txt |  pBEjHJnwiKvAYi3zeX6KNGfhUv38A1JG   |
 +----------+-------------+-------------------------------------+
 == 4. Normal delete adds a delete marker (data is NOT lost)
 {
     "DeleteMarker": true,
-    "VersionId": "q3N.9DS77mc1PskcTiicc_mcNhLuC39T"
+    "VersionId": "O5RvY2ICv2W_vV.Dw2.AjdR1_BQ72fj7"
 }
 aws: [ERROR]: An error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
 == 5. Recover: delete the delete marker
