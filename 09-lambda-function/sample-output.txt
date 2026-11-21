@@ -1,0 +1,31 @@
+== 1. IAM execution role (lets Lambda run and write logs, nothing else)
+lab-09-lambda-role
+== 2. Package and create the function
+------------------------------------------
+|             CreateFunction             |
++--------+----------------+--------------+
+| Memory |     Name       |   Runtime    |
++--------+----------------+--------------+
+|  128   |  lab-09-hello  |  python3.13  |
++--------+----------------+--------------+
+== 3. Invoke it
+-------------------------
+|        Invoke         |
++--------+--------------+
+|  Error | StatusCode   |
++--------+--------------+
+|  None  |  200         |
++--------+--------------+
+{"message": "Hello, AWS Portfolio! Greetings from AWS Lambda.", "request_id": "90bc4b48-fdae-4296-9140-da069e5302ed"}
+== 4. Read the logs from CloudWatch
+INIT_START Runtime Version: python:3.13.mainlinev2.v86
+Runtime Version ARN: arn:aws:lambda:ap-southeast-2::runtime:94107394b7943d336b78c01af71e42f453f8186ba74ab877f115e1908ea07783
+START RequestId: 90bc4b48-fdae-4296-9140-da069e5302ed Version: $LATEST
+Greeting requested for: AWS Portfolio
+END RequestId: 90bc4b48-fdae-4296-9140-da069e5302ed
+REPORT RequestId: 90bc4b48-fdae-4296-9140-da069e5302ed
+Duration: 1.70 ms
+Billed Duration: 81 ms
+Memory Size: 128 MB
+Max Memory Used: 31 MB
+Init Duration: 78.68 ms

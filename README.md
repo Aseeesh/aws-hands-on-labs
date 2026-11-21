@@ -32,7 +32,7 @@ Start from [`_template/`](_template/README.md) to add a lab.
 | 06 | Storage | CloudFront in front of S3 | CloudFront, S3 | Beginner | Planned |
 | 07 | Compute | EC2 web server | EC2 | Beginner | Planned |
 | 08 | Compute | ALB + Auto Scaling | ELB, ASG | Intermediate | Planned |
-| 09 | Compute | Lambda function | Lambda | Beginner | Planned |
+| 09 | Compute | [Lambda function](09-lambda-function/README.md) | Lambda, IAM | Beginner | Done |
 | 10 | Compute | Lambda + API Gateway REST API | Lambda, API Gateway | Beginner | Planned |
 | 11 | Compute | Container on ECS Fargate | ECS, ECR | Intermediate | Planned |
 | 12 | Networking | Custom VPC | VPC | Intermediate | Planned |
