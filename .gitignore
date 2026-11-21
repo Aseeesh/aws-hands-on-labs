@@ -1,0 +1,10 @@
+.DS_Store
+*.pem
+*.key
+.env
+*.tfstate
+*.tfstate.*
+.terraform/
+cdk.out/
+node_modules/
+__pycache__/
