@@ -39,7 +39,7 @@ Start from [`_template/`](_template/README.md) to add a lab.
 | 13 | Networking | Security groups vs NACLs | VPC | Intermediate | Planned |
 | 14 | Networking | Route 53 custom domain | Route 53 | Intermediate | Planned |
 | 15 | Databases | RDS in a private subnet | RDS | Intermediate | Planned |
-| 16 | Databases | DynamoDB CRUD with Python | DynamoDB | Beginner | Planned |
+| 16 | Databases | [DynamoDB CRUD with Python](16-dynamodb-crud/README.md) | DynamoDB | Beginner | Done |
 | 17 | Serverless | S3 upload → Lambda → DynamoDB | S3, Lambda, DynamoDB | Intermediate | Planned |
 | 18 | Serverless | SQS + SNS fan-out | SQS, SNS | Beginner | Planned |
 | 19 | Serverless | Scheduled job | EventBridge, Lambda | Beginner | Planned |
