@@ -35,7 +35,7 @@ Start from [`_template/`](_template/README.md) to add a lab.
 | 09 | Compute | [Lambda function](09-lambda-function/README.md) | Lambda, IAM | Beginner | Done |
 | 10 | Compute | [Lambda + API Gateway REST API](10-lambda-api-gateway/README.md) | Lambda, API Gateway | Beginner | Done |
 | 11 | Compute | Container on ECS Fargate | ECS, ECR | Intermediate | Planned |
-| 12 | Networking | Custom VPC | VPC | Intermediate | Planned |
+| 12 | Networking | [Custom VPC](12-custom-vpc/README.md) | VPC | Intermediate | Done |
 | 13 | Networking | Security groups vs NACLs | VPC | Intermediate | Planned |
 | 14 | Networking | Route 53 custom domain | Route 53 | Intermediate | Planned |
 | 15 | Databases | RDS in a private subnet | RDS | Intermediate | Planned |
