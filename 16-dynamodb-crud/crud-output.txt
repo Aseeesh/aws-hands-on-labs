@@ -1,0 +1,10 @@
+CREATE  b1  The Pragmatic Programmer
+CREATE  b2  Clean Code
+CREATE  b3  Clean Architecture
+CREATE  b4  Temporary Book
+READ    b1  ->  {'year': Decimal('1999'), 'stock': Decimal('5'), 'book_id': 'b1', 'title': 'The Pragmatic Programmer', 'author': 'Hunt'}
+UPDATE  b1  ->  {'stock': Decimal('4'), 'author': 'Hunt', 'book_id': 'b1', 'title': 'The Pragmatic Programmer', 'year': Decimal('2019')}
+QUERY   author='Martin'  ->  ['Clean Code', 'Clean Architecture']
+DELETE  b4
+CREATE  b1  -> rejected (already exists): conditional write protected the data
+SCAN    3 items  ->  ['b1', 'b2', 'b3']

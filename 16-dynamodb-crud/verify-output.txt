@@ -1,0 +1,22 @@
+$ aws dynamodb describe-table --table-name lab-16-books --query 'Table.{Status:TableStatus,Billing:BillingModeSummary.BillingMode,Key:KeySchema[0].AttributeName,GSI:GlobalSecondaryIndexes[0].IndexName}'
+{
+    "Status": "ACTIVE",
+    "Billing": "PAY_PER_REQUEST",
+    "Key": "book_id",
+    "GSI": "author-index"
+}
+$ aws dynamodb scan --table-name lab-16-books --select COUNT --consistent-read
+{
+    "Count": 3
+}
+$ aws dynamodb get-item --table-name lab-16-books --key '{"book_id":{"S":"b1"}}' --query Item.[title.S,stock.N,year.N]
+[
+    "The Pragmatic Programmer",
+    "4",
+    "2019"
+]
+$ aws dynamodb query --table-name lab-16-books --index-name author-index --key-condition-expression 'author = :a' --expression-attribute-values '{":a":{"S":"Martin"}}' --query 'Items[].title.S'
+[
+    "Clean Code",
+    "Clean Architecture"
+]
