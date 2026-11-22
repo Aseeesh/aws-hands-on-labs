@@ -1,0 +1,21 @@
+$ aws sns list-subscriptions-by-topic --topic-arn <topic> --query 'Subscriptions[].[Protocol,Endpoint]'
+[
+    [
+        "sqs",
+        "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:lab-18-billing"
+    ],
+    [
+        "sqs",
+        "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:lab-18-shipping"
+    ]
+]
+$ aws sns get-subscription-attributes ... (shipping subscription: FilterPolicy, RawMessageDelivery)
+{
+    "FilterPolicy": "{\"type\":[\"physical\"]}",
+    "RawMessageDelivery": "true"
+}
+$ aws sqs get-queue-attributes --queue-url <billing> --attribute-names RedrivePolicy
+{"deadLetterTargetArn":"arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:lab-18-dlq","maxReceiveCount":3}
+$ messages in lab-18-billing: visible=3 in-flight=0
+$ messages in lab-18-shipping: visible=2 in-flight=0
+$ messages in lab-18-dlq: visible=0 in-flight=0

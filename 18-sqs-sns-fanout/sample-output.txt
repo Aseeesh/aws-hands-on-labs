@@ -1,0 +1,20 @@
+== 1. SNS topic
+== 2. Dead-letter queue + two work queues
+== 3. Queue policies: allow ONLY this topic to send messages
+== 4. Subscribe both queues (raw delivery); shipping only gets type=physical
+== 5. Publish 3 orders (1001 physical, 1002 digital, 1003 physical)
+published: {"order_id":1001,"item":"Keyboard","type":"physical"}
+published: {"order_id":1002,"item":"E-book","type":"digital"}
+published: {"order_id":1003,"item":"Monitor","type":"physical"}
+== 6. Read each queue once (30 s visibility timeout; nothing is deleted, so messages reappear)
+-- lab-18-billing  (expects 3 orders):
+{"order_id":1002,"item":"E-book","type":"digital"}
+{"order_id":1001,"item":"Keyboard","type":"physical"}
+{"order_id":1003,"item":"Monitor","type":"physical"}
+-- lab-18-shipping (expects 2 physical orders only):
+{"order_id":1003,"item":"Monitor","type":"physical"}
+{"order_id":1001,"item":"Keyboard","type":"physical"}
+-- counts (visible + in-flight):
+lab-18-billing: 0 3
+lab-18-shipping: 0 2
+lab-18-dlq: 0 0
