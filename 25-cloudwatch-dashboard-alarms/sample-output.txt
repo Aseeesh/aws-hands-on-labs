@@ -1,0 +1,12 @@
+== 1. Alarm: heartbeat stopped (fewer than 1 invocation in 15 min; missing data counts as bad)
+== 2. Alarm: heartbeat errors (any error in 5 min)
+== 3. Dashboard
+== 4. Prove an alarm can fire: force ALARM state by hand, then let CloudWatch re-evaluate
+------------------------------------------------------------
+|                      DescribeAlarms                      |
++--------------------------+----------------------+--------+
+|           Alarm          |       Reason         | State  |
++--------------------------+----------------------+--------+
+|  lab-25-heartbeat-errors |  Lab 25 manual test  |  ALARM |
++--------------------------+----------------------+--------+
+(CloudWatch re-evaluates within a few minutes and returns it to OK)
