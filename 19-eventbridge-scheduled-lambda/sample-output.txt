@@ -1,0 +1,20 @@
+== 1. IAM execution role (logs only)
+lab-19-lambda-role
+== 2. Create the function
+------------------------------------
+|          CreateFunction          |
++-------------------+--------------+
+|       Name        |   Runtime    |
++-------------------+--------------+
+|  lab-19-heartbeat |  python3.13  |
++-------------------+--------------+
+== 3. EventBridge rule on a schedule
+arn:aws:events:ap-southeast-2:123456789012:rule/lab-19-every-5-minutes
+== 4. Allow EventBridge to invoke the function, then set it as the rule target
+{"Sid":"eventbridge-invoke","Effect":"Allow","Principal":{"Service":"events.amazonaws.com"},"Action":"lambda:InvokeFunction","Resource":"arn:aws:lambda:ap-southeast-2:123456789012:function:lab-19-heartbeat","Condition":{"ArnLike":{"AWS:SourceArn":"arn:aws:events:ap-southeast-2:123456789012:rule/lab-19-every-5-minutes"}}}
+-----------------
+|  PutTargets   |
++---------+-----+
+|  Failed |  0  |
++---------+-----+
+Rule is live. The first run happens within 5 minutes; see verify.sh
