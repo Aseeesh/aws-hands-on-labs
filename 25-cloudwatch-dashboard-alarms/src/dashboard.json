@@ -7,7 +7,7 @@
      "properties": {"title": "Lab 19 heartbeat - duration (ms)", "region": "ap-southeast-2", "view": "timeSeries", "stat": "Average", "period": 300,
        "metrics": [["AWS/Lambda", "Duration", "FunctionName", "lab-19-heartbeat"]]}},
     {"type": "metric", "x": 0, "y": 6, "width": 12, "height": 6,
-     "properties": {"title": "Lab 10 API - requests and errors", "region": "ap-southeast-2", "view": "timeSeries", "stat": "Sum", "period": 300,
+     "properties": {"title": "Lab 10 API - requests and errors", "region": "ap-southeast-2", "view": "bar", "stat": "Sum", "period": 300,
        "metrics": [["AWS/ApiGateway", "Count", "ApiName", "lab-10-hello-api", "Stage", "prod"], [".", "4XXError", ".", ".", ".", "."], [".", "5XXError", ".", ".", ".", "."]]}},
     {"type": "alarm", "x": 12, "y": 6, "width": 12, "height": 6,
      "properties": {"title": "Alarm status", "alarms": ["__ALARM1__", "__ALARM2__"]}}
