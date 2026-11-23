@@ -1,0 +1,14 @@
+== alarms
+-------------------------------------------------------------------
+|                         DescribeAlarms                          |
++---------------------------+--------------+--------+-------------+
+|           Alarm           |   Metric     | State  |  Threshold  |
++---------------------------+--------------+--------+-------------+
+|  lab-25-heartbeat-errors  |  Errors      |  OK    |  1.0        |
+|  lab-25-heartbeat-stopped |  Invocations |  OK    |  1.0        |
++---------------------------+--------------+--------+-------------+
+== alarm history for the error alarm
+2026-11-23T16:05:00.219000+13:00	Alarm updated from ALARM to OK
+2026-11-23T16:03:51.208000+13:00	Alarm updated from INSUFFICIENT_DATA to ALARM
+== dashboard
+lab-25-overview
