@@ -42,7 +42,7 @@ Start from [`_template/`](_template/README.md) to add a lab.
 | 16 | Databases | [DynamoDB CRUD with Python](16-dynamodb-crud/README.md) | DynamoDB | Beginner | Done |
 | 17 | Serverless | S3 upload → Lambda → DynamoDB | S3, Lambda, DynamoDB | Intermediate | Planned |
 | 18 | Serverless | [SNS to SQS fan-out with filtering and DLQ](18-sqs-sns-fanout/README.md) | SQS, SNS | Intermediate | Done |
-| 19 | Serverless | Scheduled job | EventBridge, Lambda | Beginner | Planned |
+| 19 | Serverless | [Scheduled job with EventBridge and Lambda](19-eventbridge-scheduled-lambda/README.md) | EventBridge, Lambda | Beginner | Done |
 | 20 | Serverless | Step Functions workflow | Step Functions | Intermediate | Planned |
 | 21 | Security | KMS encryption | KMS | Intermediate | Planned |
 | 22 | Security | Secrets Manager with Lambda | Secrets Manager | Intermediate | Planned |
