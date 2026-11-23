@@ -1,0 +1,30 @@
+== rule
+--------------------------------
+|         DescribeRule         |
++------------------+-----------+
+|     Schedule     |   State   |
++------------------+-----------+
+|  rate(5 minutes) |  ENABLED  |
++------------------+-----------+
+== target
+heartbeat
+== log lines written by the scheduled runs
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T01:41:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T01:46:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T01:51:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T01:56:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:01:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:06:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:11:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:16:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:21:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:26:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:31:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:36:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:41:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:46:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:51:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T02:56:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+{"job": "lab-19-heartbeat", "ran_at": "2026-11-23T03:01:23+00:00", "triggered_by": "aws.events", "rule": "lab-19-every-5-minutes"}
+== invocations in the last hour (CloudWatch metric)
+12.0
