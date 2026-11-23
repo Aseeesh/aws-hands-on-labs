@@ -48,7 +48,7 @@ Start from [`_template/`](_template/README.md) to add a lab.
 | 22 | Security | Secrets Manager with Lambda | Secrets Manager | Intermediate | Planned |
 | 23 | Security | WAF | WAF | Intermediate | Planned |
 | 24 | Security | GuardDuty + CloudTrail | GuardDuty, CloudTrail | Intermediate | Planned |
-| 25 | Monitoring | CloudWatch dashboards and alarms | CloudWatch | Beginner | Planned |
+| 25 | Monitoring | [CloudWatch dashboard and alarms](25-cloudwatch-dashboard-alarms/README.md) | CloudWatch | Beginner | Done |
 | 26 | Monitoring | Logs Insights queries | CloudWatch Logs | Intermediate | Planned |
 | 27 | IaC / CI-CD | CloudFormation stack | CloudFormation | Intermediate | Planned |
 | 28 | IaC / CI-CD | Terraform VPC + EC2 | Terraform | Intermediate | Planned |
